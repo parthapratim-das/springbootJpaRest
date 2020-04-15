@@ -1,0 +1,47 @@
+insert into students (sid, sname) values(101,'Rakesh');
+insert into students (sid, sname) values(102,'Anish');
+insert into students (sid, sname) values(105,'Mahesh');
+insert into students (sid, sname) values(103,'Pradeep');
+insert into students (sid, sname) values(104,'Anima');
+insert into students (sid, sname) values(106,'Sumit');
+insert into students (sid, sname) values(107,'Kaushik');
+insert into students (sid, sname) values(108,'Naveen');
+
+
+
+insert into departments (dept_id, dept_name) values (201, 'CSE');
+insert into departments (dept_id, dept_name) values (202, 'IT');
+insert into departments (dept_id, dept_name) values (203, 'ECE');
+insert into departments (dept_id, dept_name) values (204, 'EIE');
+insert into departments (dept_id, dept_name) values (205, 'Mech');
+
+
+insert into teachers (teacher_id, qualification, name, department_dept_id) values (301, 'M.Tech', 'B.Jana',201);
+insert into teachers (teacher_id, qualification, name, department_dept_id) values (302, 'M.Sc.', 'A.Kumar',205);
+insert into teachers (teacher_id, qualification, name, department_dept_id) values (303, 'PHD.', 'S.Sarkar',202);
+insert into teachers (teacher_id, qualification, name, department_dept_id) values (304, 'B.Tech', 'Rahul Kaushik',204);
+insert into teachers (teacher_id, qualification, name, department_dept_id) values (305, 'M.Tech', 'D.K.Basak',201);
+insert into teachers (teacher_id, qualification, name, department_dept_id) values (306, 'M.Sc.', 'R.Rudra',201);
+insert into teachers (teacher_id, qualification, name, department_dept_id) values (307, 'M.Tech', 'B.Biswas',202);
+
+
+
+insert into students_teachers (students_sid, teachers_teacher_id) values (101,301);
+insert into students_teachers (students_sid, teachers_teacher_id) values (101,305);
+insert into students_teachers (students_sid, teachers_teacher_id) values (101,306);
+
+insert into students_teachers (students_sid, teachers_teacher_id) values (102,301);
+insert into students_teachers (students_sid, teachers_teacher_id) values (102,305);
+insert into students_teachers (students_sid, teachers_teacher_id) values (102,306);
+
+insert into students_teachers (students_sid, teachers_teacher_id) values (103,302);
+insert into students_teachers (students_sid, teachers_teacher_id) values (104,302);
+
+insert into students_teachers (students_sid, teachers_teacher_id) values (105,303);
+insert into students_teachers (students_sid, teachers_teacher_id) values (105,307);
+
+insert into students_teachers (students_sid, teachers_teacher_id) values (106,303);
+insert into students_teachers (students_sid, teachers_teacher_id) values (101,307);
+
+insert into students_teachers (students_sid, teachers_teacher_id) values (107,304);
+insert into students_teachers (students_sid, teachers_teacher_id) values (108,304);
