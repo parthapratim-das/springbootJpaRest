@@ -56,5 +56,7 @@ class DepartmentResourceTest {
 		
 		assertEquals(returnedDepartment, department);
 	}
+	
+	
 
 }

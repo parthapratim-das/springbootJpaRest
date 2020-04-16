@@ -22,6 +22,9 @@ public class Department {
 	@JsonIgnore
 	private List<Teacher> teachers;
 	
+	public Department() {
+		
+	}
 	public Department(int id, String deptName) {
 		this.id = id;
 		this.deptName = deptName;
