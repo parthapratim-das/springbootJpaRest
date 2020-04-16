@@ -6,8 +6,10 @@ import static org.mockito.Mockito.when;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import org.assertj.core.util.Arrays;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -27,6 +29,7 @@ class DepartmentResourceTest {
 	@Mock
 	DepartmentRepository departmentRepository;
 	
+	//@Disabled
 	@Test
 	void testGetAllDepartment() {
 		
@@ -40,6 +43,18 @@ class DepartmentResourceTest {
 		
 		assertThat(expectedList.size()).isEqualTo(2);
 		assertThat(expectedList.get(0).getDeptName()).isEqualTo("CSE");
+	}
+	
+	@Test
+	void testFindDepartmentById()
+	{
+		Department department = new Department(201, "CSE");
+		
+		when(departmentRepository.findById(201)).thenReturn(Optional.of(department));
+		
+		Department returnedDepartment = departmentRepository.findById(201).get();
+		
+		assertEquals(returnedDepartment, department);
 	}
 
 }
