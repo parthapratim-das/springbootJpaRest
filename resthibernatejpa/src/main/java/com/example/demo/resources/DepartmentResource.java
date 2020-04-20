@@ -29,7 +29,7 @@ public class DepartmentResource {
 	DepartmentRepository departmentRepository;
 	
 	@GET
-	@RequestMapping("/")
+	@RequestMapping("/all")
 	@Produces({MediaType.APPLICATION_XML,MediaType.APPLICATION_JSON})
 	public List<Department> getAllDepartment()
 	{

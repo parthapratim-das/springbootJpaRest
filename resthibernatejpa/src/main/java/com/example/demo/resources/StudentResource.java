@@ -23,7 +23,7 @@ public class StudentResource {
 	StudentRepository studentRepository;
 	
 	@GET
-	@RequestMapping("/")
+	@RequestMapping("/all")
 	public List<Student> findAllStudents()
 	{
 		return studentRepository.findAll();

@@ -21,7 +21,7 @@ public class TeacherResource {
 	TeacherRepository teacherRepository;
 	
 	@GET
-	@RequestMapping("/")
+	@RequestMapping("/all")
 	public List<Teacher> getAllTeachers()
 	{
 		return teacherRepository.findAll();
