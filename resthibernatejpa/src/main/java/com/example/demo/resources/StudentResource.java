@@ -6,6 +6,8 @@ import java.util.Optional;
 import javax.ws.rs.GET;
 import javax.ws.rs.PathParam;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,6 +21,8 @@ import com.example.demo.repositories.StudentRepository;
 @RequestMapping("/students")
 public class StudentResource {
 	
+	Logger logger = LoggerFactory.getLogger(StudentResource.class);
+	
 	@Autowired
 	StudentRepository studentRepository;
 	
@@ -26,6 +30,7 @@ public class StudentResource {
 	@RequestMapping("/all")
 	public List<Student> findAllStudents()
 	{
+		logger.trace("Student resources getAll method called");
 		return studentRepository.findAll();
 	}
 	

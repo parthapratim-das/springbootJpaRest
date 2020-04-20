@@ -25,8 +25,6 @@ public class ResthibernatejpaApplication {
 	{
 		return new Docket(DocumentationType.SWAGGER_2)
 				.select()
-				//.paths(Predicates.or( PathSelectors.regex("/students/*"),PathSelectors.regex("/teachers/*"))) 
-				//.build() .pathMapping("/")
 				.paths(PathSelectors.any())
 				//.paths(PathSelectors.ant("/students/*"))
 				//.paths(PathSelectors.ant("/teachers/*"))

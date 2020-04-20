@@ -9,6 +9,8 @@ import javax.ws.rs.POST;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -25,6 +27,8 @@ import com.example.demo.repositories.DepartmentRepository;
 @RequestMapping("/departments")
 public class DepartmentResource {
 	
+	Logger logger = LoggerFactory.getLogger(DepartmentResource.class);
+	
 	@Autowired
 	DepartmentRepository departmentRepository;
 	
@@ -33,6 +37,7 @@ public class DepartmentResource {
 	@Produces({MediaType.APPLICATION_XML,MediaType.APPLICATION_JSON})
 	public List<Department> getAllDepartment()
 	{
+		logger.trace("get all departments called");
 		return departmentRepository.findAll();
 	}
 	

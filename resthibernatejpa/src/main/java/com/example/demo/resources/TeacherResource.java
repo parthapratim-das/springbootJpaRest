@@ -5,6 +5,8 @@ import java.util.Optional;
 
 import javax.ws.rs.GET;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,6 +19,8 @@ import com.example.demo.repositories.TeacherRepository;
 @RequestMapping("/teachers")
 public class TeacherResource {
 	
+	Logger logger = LoggerFactory.getLogger(TeacherResource.class);
+	
 	@Autowired
 	TeacherRepository teacherRepository;
 	
@@ -24,6 +28,8 @@ public class TeacherResource {
 	@RequestMapping("/all")
 	public List<Teacher> getAllTeachers()
 	{
+		
+		logger.trace("TeacherResources getAll method invoked");
 		return teacherRepository.findAll();
 				
 	}
